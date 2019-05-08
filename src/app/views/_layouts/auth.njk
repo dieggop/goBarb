@@ -1,1 +1,9 @@
-{% block body %}{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include "_partials/header.njk" %}
+  <body>
+    <div class="auth-wrapper">
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const fs = require('fs')
 const path = require('path')
@@ -17,7 +17,7 @@ fs
   .forEach(file => {
     const model = sequelize['import'](path.join(__dirname, file))
     db[model.name] = model
-  });
+  })
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {

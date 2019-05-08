@@ -15,7 +15,6 @@ class App {
     this.express.use(express.urlencoded({
       extended: false
     }))
-
   }
   views () {
     nunjucks.configure(path.resolve(__dirname, 'app', 'views'), {
@@ -23,6 +22,7 @@ class App {
       express: this.express,
       autoescape: true
     })
+    this.express.use(express.static(path.resolve(__dirname, 'public')))
     this.express.set('view engine', 'njk')
   }
   routes () {
