@@ -8,8 +8,7 @@ module.exports = {
     filename: (req, file, cb) => {
       crypto.randomBytes(16, (err, raw) => {
         if (err) return cb(err)
-
-        cb(null, raw.toString('hex') + path.extname(file.orignalname))
+        cb(null, raw.toString('hex') + path.extname(file.originalname))
       })
     }
   })
