@@ -6,6 +6,13 @@ class SessionController {
     res.render('auth/signin')
   }
 
+  destroy (req, res) {
+    req.session.destroy(() => {
+      res.clearCookie('root')
+      return res.redirect('/')
+    })
+  }
+
   async store (req, res) {
     const {
       email,
